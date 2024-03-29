@@ -1,0 +1,112 @@
+#1
+class Student{
+    String name;
+    String rollNumber;
+    String phoneNumber;
+    String address;
+    Student(String name,String rollNumber,String phoneNumber,String address){
+        this.name=name;
+        this.rollNumber=rollNumber;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+    }
+    void display(){
+        System.out.println("Student Information:");
+        System.out.println("Sam-RollNumber:"+this.rollNumber);
+        System.out.println("PhoneNumber:"+this.phoneNumber);
+        System.out.println("Address:"+this.address);
+    }
+} 
+public class MyClass{
+    public static void main(String[]args){
+        Student  sam=new Student("Sam","S001","1234567890","House");
+        Student john=new Student("John","J001","9876643210","Other house");
+        sam.display();
+        john.display();
+    }
+}
+#2
+class Calculator{
+    int num1;
+    int num2;
+    public Calculator(){
+        this.num1=0;
+        this.num2=0;
+    }
+    public int add(int num1,int num2){
+        return num1+num2;
+    }
+    public int add(){
+        return num1+num2;
+    }
+    public int multiply(int num1,int num2){
+        return num1*num2;
+    }
+    public int multiply(){
+        return num1*num2;
+    }
+}
+public class TestApp{
+public static void main(String[]args){
+    Calculator calc=new Calculator();
+    calc.num1=5;
+    calc.num2=3;
+    int sum1=calc.add(10,20);
+    System.out.println("Sum(with parameters):"+sum1);
+    int sum2=calc.add();
+    System.out.println("Sum(without parameters):"+sum2);
+    int product1=calc.multiply(4,5);
+    System.out.println("Product(with parameters):"+product1);
+    int product2=calc.multiply();
+    System.out.println("product(without parameters):"+product2);
+}
+}
+#3
+class OverloadingExample{
+    private int num1;
+    private int num2;
+
+    public OverloadingExample(){}
+    public OverloadingExample(int num1,int num2)
+    {
+        this.num1=num1;
+        this.num2=num2;
+    }
+    public int add(){
+        return num1+num2;
+    }
+    public int add(int num3){
+        return num1+num2+num3;
+    }
+    public int add(int num3,int num4){
+        return num1+num2+num3+num4;
+    }
+    public static void main(String[]args){
+        OverloadingExample example1=new OverloadingExample();
+        OverloadingExample example2=new OverloadingExample(5,10);
+        System.out.println("Addition with no parameters:"+example1.add());
+        System.out.println("Addition with two parameters:"+example2.add());
+        System.out.println("Addition with three parameters:"+example2.add(15));
+        System.out.println("Addition with four parameters:"+example2.add(20,25));
+    }
+}
+#4
+public class Bird{
+    private String name;
+    public Bird(){
+        this.name="Unknown Bird";
+    }
+    public Bird(String name){
+        this.name=name;
+    }
+    public void displyBirdName(){
+        System.out.println("Bird Name:"+name);
+    }
+    public static void main(String[]args){
+        Bird unknownBird=new Bird();
+        Bird parrot=new Bird("Parrot");
+        Bird sparrow=new Bird("Sparrow");
+        unknownBird.displayBirdName();
+        parrot.displayBirdName();
+    }
+}
